@@ -80,12 +80,11 @@ class Apple(GameObject):
         Устанавливает случайные координаты для яблока.
         """
         max_x = 640 - 20
-        max_y = 400 - 20
 
-        x.random.randrage(0, max_x + 1, 20)
-        y.random.randrage(0, max_x + 1, 20)
+        max.x.random.randrage(0, max_x + 1, 20)
+        max.y.random.randrage(0, max_x + 1, 20)
 
-        self.position = (x, y)
+        self.position = (max.x, max.y)  # noqa: F821
 
     def draw(self, surface):
         """
