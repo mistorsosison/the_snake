@@ -1,6 +1,6 @@
-from random import choice, randint
+from random import choice, randint  # noqa: F401
 
-import pygame
+import game
 
 # Константы для размеров поля и сетки:
 SCREEN_WIDTH, SCREEN_HEIGHT = 640, 480
@@ -30,13 +30,13 @@ SNAKE_COLOR = (0, 255, 0)
 SPEED = 20
 
 # Настройка игрового окна:
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
+screen = game.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
 
 # Заголовок окна игрового поля:
-pygame.display.set_caption('Змейка')
+game.display.set_caption('Змейка')
 
 # Настройка времени:
-clock = pygame.time.Clock()
+clock = game.time.Clock()
 
 
 # Тут опишите все классы игры.
@@ -45,7 +45,7 @@ clock = pygame.time.Clock()
 
 def main():
     # Инициализация PyGame:
-    pygame.init()
+    game.init()
     # Тут нужно создать экземпляры классов.
     ...
 
