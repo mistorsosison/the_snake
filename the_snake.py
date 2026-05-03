@@ -13,20 +13,22 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-BOARD_BACKGROUND_COLOR = (0, 0, 0) 
-BORDER_COLOR = (93, 216, 228) 
+BOARD_BACKGROUND_COLOR = (0, 0, 0)
+BORDER_COLOR = (93, 216, 228)
 APPLE_COLOR = (255, 0, 0)
 SNAKE_COLOR = (0, 255, 0)
 SPEED = 20
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32) 
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
 
-pygame.display.set_caption('Змейка') 
+pygame.display.set_caption('Змейка')
 
-clock = pygame.time.Clock() 
+clock = pygame.time.Clock()
+
 
 class GameObject:
     """Базовый класс для всех игровых объектов."""
+
     def __init__(self, position=None, body_color=None):
         """Инициализирует базовый игровой объект."""
         self.position = position
@@ -39,6 +41,7 @@ class GameObject:
 
 class Apple(GameObject):
     """Класс яблока, яблоко появляется в случайном месте."""
+
     def __init__(self):
         """Инициализирует яблоко в рандомном месте."""
         super().__init__(body_color=APPLE_COLOR)
@@ -59,6 +62,7 @@ class Apple(GameObject):
 
 class Snake(GameObject):
     """Класс змейки. Движение, столкновениями и ростом."""
+
     def __init__(self):
         """Инициализирует змейку в начальном состоянии."""
         super().__init__(body_color=SNAKE_COLOR)
