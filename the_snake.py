@@ -1,4 +1,5 @@
 from random import randint
+
 import pygame
 
 # Константы для размеров поля и сетки:
@@ -12,16 +13,17 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-BOARD_BACKGROUND_COLOR = (0, 0, 0) # Цвет фона - черный
-BORDER_COLOR = (93, 216, 228) # Цвет границы ячейки
+BOARD_BACKGROUND_COLOR = (0, 0, 0) 
+BORDER_COLOR = (93, 216, 228) 
 APPLE_COLOR = (255, 0, 0)
 SNAKE_COLOR = (0, 255, 0)
 SPEED = 20
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32) # Настройка игрового окна
-pygame.display.set_caption('Змейка') # Заголовок окна игрового поля
-clock = pygame.time.Clock() # Настройка времени
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32) 
 
+pygame.display.set_caption('Змейка') 
+
+clock = pygame.time.Clock() 
 
 class GameObject:
     """Базовый класс для всех игровых объектов."""
@@ -154,6 +156,7 @@ def handle_keys(snake):
 
 def main():
     """Главная функция игры которая основной игровой цикл."""
+
     pygame.init()
 
     snake = Snake()
@@ -175,6 +178,7 @@ def main():
         if snake.get_head_position() in snake.positions[1:]:
             pygame.draw.rect(screen, BOARD_BACKGROUND_COLOR,
                              (0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
+            
             snake.reset()
             apple.randomize_position()
 
